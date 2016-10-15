@@ -12,7 +12,7 @@ def login(request, id):
 
 
 def inicio(): 
-
+	
 
 
 def registroHC():
