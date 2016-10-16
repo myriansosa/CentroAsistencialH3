@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.forms import ModelForm
 
 
-
+#LOGIN
 def registrar(ModelForm):
 	class Meta:
 		model = User
@@ -14,5 +14,7 @@ def registrar(ModelForm):
 	
 
 
-def iniciar(forms.Form):
-	
+def iniciar(Model.Form):
+	#CREAR Y BUSCAR PACIENTE
+	class Meta:
+		model=Paciente
