@@ -1,5 +1,5 @@
 from django.contrib import admin
-from CentroAsist.models import Paciente, Profesional, RegistroHC, PalabrasClave
+from CentroAsist.models import Paciente, Profesional, RegistroHC, PalabrasClave, Adjuntos
 
 
 admin.site.register(Paciente)
