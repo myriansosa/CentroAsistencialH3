@@ -4,17 +4,30 @@ from django.forms import ModelForm
 
 
 #LOGIN
-def registrar(ModelForm):
-	class Meta:
-		model = User
+def ingresar(Model.Form):
+    class Meta:
+        model = User
         fields = ['username', 'password']
         widgets = {
             'password': forms.PasswordInput(),
         }
-	
+
 
 
 def iniciar(Model.Form):
-	#CREAR Y BUSCAR PACIENTE
-	class Meta:
-		model=Paciente
+    #CREAR Y BUSCAR PACIENTE
+    class Meta:
+        model=Paciente
+        fields=['Nombre','Apellido','Historia Clinica','DNI']
+
+
+def buscar(Model.Form):
+    buscador = forms.CharField(max_length=40)
+
+        
+
+def añadirdatos(Model.Form):
+
+    class Meta:
+        model=RegistroHC
+        fields=['Observaciones']
