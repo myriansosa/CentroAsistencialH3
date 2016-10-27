@@ -1,4 +1,10 @@
+
+
+
+
 """CentroAsistencial URL Configuration
+
+
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
@@ -13,12 +19,16 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
+from django.contrib.auth.views import login
+from django.contrib.auth.views import logout
 from django.conf.urls import include, url, patterns
 from django.contrib import admin
 
 urlpatterns = patterns ('',
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^login/',"CentroAsist.views.Login", name="login"),
+    url(r'^login/',"CentroAsist.views.login", name="login"),
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}, name="auth_logout"),
-)
+    url( regex=r'^login/$', view=login, kwargs={'template_name': 'login.html'}, name='login' ), url( regex=r'^logout/$', view=logout, kwargs={'next_page': '/'}, name='logout' ), 
+
+)   
