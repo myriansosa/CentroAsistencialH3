@@ -54,9 +54,11 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'CentroAsistencial.urls'
 
 TEMPLATES = [
-    {
+    {   
+        
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        
+        'DIRS': '../CentroAsistencial/Templates/login.html',
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
