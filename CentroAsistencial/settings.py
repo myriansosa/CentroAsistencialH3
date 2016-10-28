@@ -58,7 +58,7 @@ TEMPLATES = [
         
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         
-        'DIRS': '../CentroAsistencial/Templates/login.html',
+        'DIRS': '../CentroAsistencial/templates/login.html',
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
