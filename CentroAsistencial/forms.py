@@ -1,10 +1,10 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.forms import ModelForm
-
+from CentroAsist.models import Paciente, RegistroHC
 
 #LOGIN
-def ingresar(Model.Form):
+class ingresar(ModelForm):
     class Meta:
         model = User
         fields = ['username', 'password']
@@ -14,20 +14,20 @@ def ingresar(Model.Form):
 
 
 
-def iniciar(Model.Form):
+class iniciar(ModelForm):
     #CREAR Y BUSCAR PACIENTE
     class Meta:
-        model=Paciente
-        fields=['Nombre','Apellido','Historia Clinica','DNI']
+        model= Paciente
+        fields=['nombre','apellido','dni']
 
 
-def buscar(Model.Form):
+class buscar(ModelForm):
     buscador = forms.CharField(max_length=40)
 
         
 
-def añadirdatos(Model.Form):
+class añadirdatos(ModelForm):
 
     class Meta:
         model=RegistroHC
-        fields=['Observaciones']
+        fields=['registro_paciente']
