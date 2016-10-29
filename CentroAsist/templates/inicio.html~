@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+      {% block content %}
+
+<br>
+<br>
+<br>
+<h1>Centro Asistencial Hogar 3</h1>
+
+<form action="" method="post">
+{% csrf_token %}
+<br>
+<input type="submit" name="publico" value="comenzar juego " class="btn"> 
+ {{ form }}
+</input>
+
+{% endblock %}
