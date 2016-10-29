@@ -1,17 +1,12 @@
 from django import forms
 from django.contrib.auth.models import User
-from django.forms import ModelForm
+from django.forms import ModelForm, Form
 from CentroAsist.models import Paciente, RegistroHC
 
 #LOGIN
-class ingresar(ModelForm):
-    class Meta:
-        model = User
-        fields = ['username', 'password']
-        widgets = {
-            'password': forms.PasswordInput(),
-        }
-
+class LoginForm(Form):
+    username = forms.CharField(max_length=40, label="Nombre de usuario")
+    password = forms.CharField(widget=forms.PasswordInput(), label="Contraseña")
 
 
 class iniciar(ModelForm):
