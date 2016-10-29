@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+  <head>
+    <script LANGUAGE="Javascript">
+        var txt=" Centro Asistencial";
+        var espera=300;
+        var refresco=null;
+        function rotulo_title() {
+            document.title=txt;
+            txt=txt.substring(1,txt.length)+txt.charAt(0);
+            refresco=setTimeout("rotulo_title()",espera);
+        }
+        rotulo_title();
+    </script>
+    <a href="{% url 'home' %}" class="inicio"><center><img src="../static/imagen/CentroAsistencial.jpg" width=40% /></center></a>
+  </head>
+
+  <body BGCOLOR="#eaeded">
+    <link rel="stylesheet" type="text/css" href="{% static 'estiloinicio.css' %}" />
+    
+    
+    <br></br>
+    <ul class="menu">
+    <h2>
+      <center><a href="info.html">INGRESAR</a></center>
+    </h2>
+        <ul>
+      </li>
+    </ul>
+    <br></br>
+    
+
+    
+    <hr>
+<footer>
+  <h5>
+  <center><p> Proyecto creado por estudiantes de Instituto Tecnico Superior Cordoba &copy:2016 </p></center>
+  <h5>
+</footer>
+  </body>
+</html>
+
+
+
+

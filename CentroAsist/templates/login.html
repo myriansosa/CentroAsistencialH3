@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+  <head>
+    <script LANGUAGE="Javascript">
+        var txt=" Centro Asistencial";
+        var espera=300;
+        var refresco=null;
+        function rotulo_title() {
+            document.title=txt;
+            txt=txt.substring(1,txt.length)+txt.charAt(0);
+            refresco=setTimeout("rotulo_title()",espera);
+        }
+        rotulo_title();
+    </script>
+</head>
+<body>
+<center><img src ="{% static "imagen/centro.png" %}" WIDTH=980></center>
+<br>
+
+<FORM name=form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+
+<INPUT type='submit' value='ingresar'>
+
+</FORM> 
+
+
+
+</body>
+</html>
