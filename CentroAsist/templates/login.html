@@ -18,14 +18,19 @@
 <center><img src ="{% static "imagen/centro.png" %}" WIDTH=980></center>
 <br>
 
+{% block body %}
+
+
 <FORM name=form method="post">
 {% csrf_token %}
 {{ form.as_p }}
 
 <INPUT type='submit' value='ingresar'>
 
-</FORM> 
+</FORM>
 
+
+{% endblock body %}
 
 
 </body>

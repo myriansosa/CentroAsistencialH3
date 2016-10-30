@@ -1,0 +1,43 @@
+{% extends "login.html" %}
+{% load staticfiles %}
+
+
+
+{% block body %}
+
+
+<h1>{{ paciente }}</h1>
+
+<dl>
+  <dt>DNI</dt>
+  <dd>{{ paciente.dni }}</dd>
+  <dt>Sexo</dt>
+  <dd>{{ paciente.sexo }}</dd>
+</dl>
+
+
+</dd>
+
+
+
+<FORM name=form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+
+<INPUT type='submit' value='ingresar'>
+
+</FORM>
+
+{% for registro in registros %}
+<div class="registro">
+	<h5>{{ registro.consulta }}</h5>
+	<span datetime="{{ registro.fecha }}">{{ registro.fecha|date }}</span> por <strong>{{ registro.profesional }}</strong>
+
+	<p>{{ registro.entrada }}</p>
+</div>
+<hr>
+{% endfor %}
+
+
+
+{% endblock body %}

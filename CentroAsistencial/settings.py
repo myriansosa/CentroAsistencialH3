@@ -54,8 +54,8 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'CentroAsistencial.urls'
 
 TEMPLATES = [
-    {   
-        
+    {
+
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'APP_DIRS': True,
         'OPTIONS': {
@@ -105,3 +105,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+
+LOGIN_URL = '/login/'
