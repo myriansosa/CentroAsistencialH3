@@ -2,7 +2,7 @@
 
 
 from django.shortcuts import render, redirect,get_object_or_404
-from CentroAsistencial.forms import (LoginForm, PacienteForm, buscar, RegistroHCForm)
+from CentroAsistencial.forms import (LoginForm, PacienteForm, BuscarForm, RegistroHCForm)
 from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
@@ -80,10 +80,13 @@ def registro_paciente(request, id_paciente=None):
         # check whether it's valid:
         if form.is_valid():
             paciente = form.save()
+            paciente.edad ()
             return redirect('/paciente/{}'.format(paciente.id))
 
     # if a GET (or any other method) we'll create a blank form
     else:
         form = PacienteForm()
 
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'login.html', {'form': form}) 
+
+

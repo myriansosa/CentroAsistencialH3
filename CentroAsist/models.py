@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils.timezone import now
+from model_utils.models import TimeStampedModel
 
 
 
@@ -31,9 +33,14 @@ class Paciente(models.Model):
                                  null=True, blank=True,
                                  help_text='Numero historia clinica en archivo físico')
 
+    
+    def edad(self):
+        return int((now().date() - self.fecha_nacimiento). days / 365.25)
+    
     def __str__(self):
-        return "{} {}".format(self.nombre, self.apellido)
+        return "{} {}".format(self.nombre, self.apellido )
 
+    
 
 class Profesional(models.Model):
     user = models.OneToOneField('auth.User', related_name='profesional')
